@@ -1,0 +1,23 @@
+A dictionary is a book which explains the meanings of words or, more precisely, lexemes
+The words are arranged in alphabetical order so that they can be found quickly. The word 
+"dictionary" comes from the Latin "dictio" ("saying").
+
+There are several types of dictionaries: dictionaries which explain words and how they 
+are used, dictionaries which translate words from one langauge to another, dictionaries 
+of biography which tell about famous people, technical dictionaries which explain the 
+meanings of technical words or words connected to a particular subject (sometimes called
+a thesaurus). Some of these come close to being an encyclopedia, but an encyclopedia gives a lot
+of extra information about things (knowledge) and does not explain the use of the language.
+
+Dictionaries which explain what words mean will give a clear "definition" of the word 
+(e.g. hippopotamus : a hoofed mammal with thick skin, large mouth and short legs that 
+lives in rivers and lakes of Africa.)
+
+A big dictionary will also give more information about the word. It will explain how it 
+is pronounced. Usually the International Phonetic Alphabet is used for this. It will 
+explain how the word is used. This is not a problem for a word like "hippopotamus", but 
+a word like "put" has so many different meanings that a large dictionary may have a whole
+page or more to explain how it can be used. It will also explain what language the word 
+comes from (e.g. Greek "hippos" horse and "potamus" river).
+
+A dictionary may also give the form of the word in different tenses, plural form etc.
