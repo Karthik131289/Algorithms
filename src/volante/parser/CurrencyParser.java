@@ -1,7 +1,11 @@
 package volante.parser;
 
+import volante.core.Country;
 import volante.core.Currency;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.util.ArrayList;
 
 /**
@@ -40,6 +44,54 @@ public class CurrencyParser {
         this.currencyList.add( index , currency );
     }
 
-    private ArrayList<Currency> currencyList = new ArrayList<Currency>();
+    public void parseCurrencyFile() throws Exception {
+        FileReader fr = null;
+        BufferedReader reader = null;
+        try {
+            fr = new FileReader( new File( this.getClass().getResource( FILE_NAME ).getPath() ) );
+            reader = new BufferedReader( fr );
+            String line = "";
+            boolean isFirstLine = true;
+            while ( (line = reader.readLine()) != null ) {
+                if( isFirstLine )
+                    isFirstLine = false;
+                else
+                    this.addCurrency( getAsCurrency(line) );
+            }
+        } finally {
+            if( fr != null )
+                fr.close();
+            if( reader != null )
+                reader.close();
+        }
+    }
+
+    private Currency getAsCurrency( String data ) throws Exception {
+        Currency currency = null;
+        String[] splitStr = data.split( "\t" );
+
+        if( splitStr.length == 4 )
+        {
+
+            currency = new Currency();
+            currency.setCurrencyCode( splitStr[0] );
+            currency.setCurrencyName( splitStr[1] );
+            currency.setFractionalDigit( Short.parseShort(splitStr[2]) );
+            currency.setCountryCode(splitStr[3]);
+
+            return currency;
+        } else {
+            //throw new Exception("Invalid Country Code Entry... " + data);
+        }
+
+        return currency;
+    }
+
+    public static void main(String[] args) throws Exception {
+        CurrencyParser parser = new CurrencyParser();
+        parser.parseCurrencyFile();
+        System.out.println( "Size : " + currencyList.size() );
+    }
+    private static ArrayList<Currency> currencyList = new ArrayList<Currency>();
     public static final String FILE_NAME = "CurrencyCode.txt";
 }

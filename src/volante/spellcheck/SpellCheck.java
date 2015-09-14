@@ -5,7 +5,10 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.Arrays;
 import java.util.Vector;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class SpellCheck {
 
@@ -46,7 +49,7 @@ public class SpellCheck {
 		
 		String line = "";
 		while( ( line = reader.readLine() ) != null ) {
-			allWords.add ( getWords( line ) );
+			allWords.add ( getWords(line) );
 		}
 		
 		fileReader.close();
