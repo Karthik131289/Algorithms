@@ -1,5 +1,6 @@
 package javalib.utill.log;
 
+import java.io.IOException;
 import java.util.logging.*;
 
 /**
@@ -24,6 +25,12 @@ public class JDKLogManager {
     }
 
     private Handler getFileHandler() {
-        Handler fileHandler = new FileHandler( "" );
+        Handler fileHandler = null;
+        try {
+           fileHandler  = new FileHandler( "" );
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return fileHandler;
     }
 }
